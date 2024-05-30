@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}Static View{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <div class="card">
+        <div class="card-body">
+            <div class="container">
+                <h2 class="header" id="header">Цена бошмака</h2>
+                <table class="table table-striped table-danger table-bordered border-danger">
+                    <thead class="table-danger table-bordered border-danger">
+                        <tr id="header">
+                            <td>#</td>
+                            <td>Персонаж</td>
+                            <td>Цена </td>
+                            <td>Количество </td>
+                            <td>Цена(с PVN)</td>
+                            <td>Цена(без PVN)</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in tabula %}
+                        <tr>
+                            <td id="header" scope="row" class="table-danger table-bordered border-danger">{{ loop.index }}</td>
+                            {% for element in row %}
+                                <td>{{ element }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+{% endblock %}

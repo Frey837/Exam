@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<h2 class="header"></h2>
+<form method="POST" >
+    <div class="form-group">
+        <label for="email">User:</label>
+        <input type="text" class="form-control" id="email" name="email">
+    </div>
+    <div class="form-group">
+        <label for="password">Parole:</label>
+        <input type="password" class="form-control" id="password" name="password"
+    </div>
+    <button type="submit" " class="btn">Join</button>
+</form>
+{% endblock %}
